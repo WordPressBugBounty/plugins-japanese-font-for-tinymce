@@ -1,0 +1,1 @@
+# plugins-japanese-font-for-tinymce
