@@ -29,6 +29,7 @@ function tinyjpfont_options_page()
 		update_option('tinyjpfont_select', $_POST['tinyjpfont_select']);
 		update_option('tinyjpfont_head', $_POST['tinyjpfont_head']);
 		update_option('tinyjpfont_default_font', $_POST['tinyjpfont_default_font']);
+        update_option('tinyjpfont_whole_font', $_POST['tinyjpfont_whole_font']);
 		// チェックボックスはチェックされないとキーも受け取れないので、ない時は0にする
 		$tinyjpfont_check_cdn = isset($_POST['tinyjpfont_check_cdn']) ? 1 : 0;
 		update_option('tinyjpfont_check_cdn', $tinyjpfont_check_cdn);
@@ -127,6 +128,27 @@ function tinyjpfont_options_page()
                                 <?php selected("Huifont", get_option('tinyjpfont_default_font')); ?>>ふい字</option>
                             <option value="kokorom"
                                 <?php selected("kokorom", get_option('tinyjpfont_default_font')); ?>>こころ明朝体</option>
+                        </select>
+                    </td>
+                    </th>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="tinyjpfont_whole_font">
+                            <h3>ウェブサイト全体適用フォント</h3>
+                            <p>ウェブサイト全体に適用されるフォントです。</p>
+                        </label></th><br>
+                    <td>
+                        <select name="tinyjpfont_whole_font" id="tinyjpfont_whole_font">
+                            <option value="noselect"
+                                <?php selected("noselect", get_option('tinyjpfont_whole_font')); ?>>
+                                選択しない</option>
+                            <option value="Noto Sans Japanese"
+                                <?php selected("noto", get_option('tinyjpfont_whole_font')); ?>>Noto Sans Japanese
+                            </option>
+                            <option value="Huifont" <?php selected("Huifont", get_option('tinyjpfont_whole_font')); ?>>
+                                ふい字</option>
+                            <option value="kokorom" <?php selected("kokorom", get_option('tinyjpfont_whole_font')); ?>>
+                                こころ明朝体</option>
                         </select>
                     </td>
                     </th>
